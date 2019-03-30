@@ -1,20 +1,19 @@
 #!/usr/bin/env Bash
 # File: guessinggame.sh
 
-function getfilenum {
-	for filenums in $(ls -A | wc -l)
+function getfilenum { 
+	for filenums in $(find . \( ! -regex '.*/\..*' \) -type f | wc -l) #excludes hidden files
 	do
-		echo $filenums
+		echo $filenums #returns number of files in directory
 	done
 }
 
 function guessinggame {
 	local fsum=$(getfilenum $@)
-	echo "There are $fsum files in this current directory. Delete me; this is just a check."
 	echo "Welcome to the Guessing Game. Guess how many files are in the current directory."
 	read guess
 
-	while [[ $guess != $fsum ]]
+	while [[ $guess != $fsum ]] #Loops if guess is wrong.
 	do
 		if [[ $guess -gt $fsum ]]
 		then
@@ -27,10 +26,10 @@ function guessinggame {
 		fi
 	done
 
-	if [[ $guess =~ $fsum ]]
+	if [[ $guess =~ $fsum ]] #If guess is correct, program ends.
 	then
 		echo "Congratulations, you guessed correctly. Program complete."
 		exit 0
 	fi
 }
-guessinggame
+guessinggame #calls function guessinggame to initiate program, which in turn calls function getfilenum.
