@@ -4,8 +4,8 @@
 
 ### Date & time at which make was run: 
 
-03/30/2019,06:41:04 PM
+03/30/2019,06:42:14 PM
 
-#### * The number of lines of code contained in guessinggame.sh: * 
+* The number of lines of code contained in guessinggame.sh: * 
 
 35 
