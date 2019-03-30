@@ -14,7 +14,7 @@ generate:
 	@echo "### Date & time at which make was run: \n" >> README.md
 	@echo "`date +%x,%X`" >> README.md
 	@echo >> README.md
-	@echo "The number of lines of code contained in guessinggame.sh: \n" >> README.md
+	@echo "### The number of lines of code contained in guessinggame.sh: \n" >> README.md
 	@wc -l guessinggame.sh | grep -o "^[0-9].." >> README.md
 	
 clean:
