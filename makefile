@@ -9,12 +9,12 @@ generate:
 	@echo "It created README.md for a GitHub Page."
 	@touch README.md
 	@echo "# Title: Guessing Game Project \n" > README.md
-	@echo "## **By Jamie Z**" >> README.md
+	@echo "## By Jamie Z" >> README.md
 	@echo >> README.md
 	@echo "### Date & time at which make was run: \n" >> README.md
 	@echo "`date +%x,%X`" >> README.md
 	@echo >> README.md
-	@echo "#### *The number of lines of code contained in guessinggame.sh: * \n" >> README.md
+	@echo "#### * The number of lines of code contained in guessinggame.sh: * \n" >> README.md
 	@wc -l guessinggame.sh | grep -o "^[0-9].." >> README.md
 	
 clean:
